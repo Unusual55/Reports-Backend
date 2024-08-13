@@ -2,8 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors'); 
-
-const employeesRoutes = require('./routes/employeesRoutes');
 const reportsRoutes = require('./routes/reportsRoutes');
 
 const app = express();
@@ -12,7 +10,6 @@ const port = 5000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(employeesRoutes);
 app.use(reportsRoutes);
 
 

@@ -88,7 +88,6 @@ router.patch('/report', async (req, res) => {
         const overlappingShift = await Report.find({
             employeeName: employeeName,
             date: date,
-            // number: { $ne: number }, // Exclude the current report by number
             $or: [
                 { startHour: { $lt: end }, endHour: { $gt: start } },
                 { startHour: { $lte: start }, endHour: { $gte: end } },
